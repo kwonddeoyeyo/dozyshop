@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Dozy Shop</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="HTML5 website template">
+  <meta name="keywords" content="global, template, html, sass, jquery">
+  <link rel="stylesheet" href="assets/css/layout.css">
+</head>
+<body>
+
+<!-- notification for small viewports and landscape oriented smartphones -->
+<div class="device-notification">
+  <a class="device-notification--logo" href="#0">
+    <img src="assets/img/logo.jpg" alt="Dozy">
+    <p>Dozy</p>
+  </a>
+  <p class="device-notification--message"></p>
+</div>
+
+<div class="perspective effect-rotate-left">
+    <ul class="outer-nav">
+    <a href="index.html"><li class="is-active">닥터도지</li></a>
+    
+    <a href="layout.html"><li>쇼핑하기</li></a>
+        
+    <a href="layout.html"><li>장바구니</li></a>
+        
+    <a href="layout.html"><li>나의정보</li></a>
+        
+    <a href="layout.html"><li>고객센터</li></a>
+        
+  </ul>
+
+  <div class="container"><div class="outer-nav--return"></div>
+    <div id="viewport" class="l-viewport">
+      <div class="l-wrapper">
+        <header class="header">
+          <a class="header--logo" href="#0">
+            <img src="assets/img/logo.png" alt="Global">
+            <p></p>
+          </a>
+          <button class="header--cta">로그인</button>
+          <div class="header--nav-toggle">
+            <span></span>
+          </div>
+        </header>
+
+        <div class="l-main-content main-content">
+        </div>
+        <div class="shopping-cart">
+        <a href="#"><img src="assets/img/shopping-cart-empty-side-view.png" ></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
+<script src="assets/js/functions-min.js"></script>
+<script language=JavaScript>
+
+var message="저작권 보호를 위해 오른쪽 마우스 클릭이 안됩니다.";
+///////////////////////////////////
+function clickIE4(){
+if (event.button==2){
+    alert(message);
+    return false;
+    }
+}
+    
+function clickNS4(e){
+if (document.layers||document.getElementById&&!document.all){
+    if (e.which==2||e.which==3){
+    alert(message);
+    return false;
+    }
+    }
+}
+if (document.layers){
+document.captureEvents(Event.MOUSEDOWN);
+document.onmousedown=clickNS4;
+}
+else if (document.all&&!document.getElementById){
+document.onmousedown=clickIE4;
+}
+//document.oncontextmenu=new Function("alert(message);return false")
+
+</script>
+</body>
+</html>
